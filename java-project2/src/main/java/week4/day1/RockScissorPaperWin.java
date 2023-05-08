@@ -5,6 +5,13 @@ import java.util.Scanner;
 
 public class RockScissorPaperWin {
     public static void main(String[] args) {
+        RockScissorPaperWin rspw = new RockScissorPaperWin();
+
+        rspw.start();
+
+    }
+
+    void start(){
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
 
