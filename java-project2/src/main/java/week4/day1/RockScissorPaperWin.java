@@ -17,16 +17,23 @@ public class RockScissorPaperWin {
 
         boolean win = false;
         do{
-            int me = sc.nextInt();
+            String me = sc.next();
             int computer = rand.nextInt(3);
 
-            System.out.println("컴퓨터: " + computer);
-            if(me - computer == 0) System.out.println("tie");
-            else if (me - computer == -1 || me - computer == 2){
+            int meInt;
+            if(me.equals("바위")) meInt = 0;
+            else if(me.equals("가위")) meInt = 1;
+            else meInt = 2;
+
+            if(computer == 0) System.out.println("컴퓨터: 바위");
+            else if(computer == 1) System.out.println("컴퓨터: 가위");
+            else System.out.println("컴퓨터: 보");
+
+            if(meInt - computer == 0) System.out.println("tie");
+            else if (meInt - computer == -1 || meInt - computer == 2){
                 System.out.println("win");
                 win = true;
             } else System.out.println("lose");
         } while(!win);
     }
-
 }
