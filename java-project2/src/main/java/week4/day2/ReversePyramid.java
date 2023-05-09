@@ -7,11 +7,11 @@ public class ReversePyramid {
         this.spaceChar = spaceChar;
     }
     public String makeALine(int height, int i){
-        return String.format("%s%s\n", spaceChar. repeat(i),"*".repeat(height + 3 - (i * 2)));
+        return String.format("%s%s\n", spaceChar. repeat(i),"*".repeat((2 * (height - i) - 1 )));
     }
     public static void main(String[] args) {
         ReversePyramid rPyramid = new ReversePyramid(" ");
-        int height = 4;
+        int height = 5;
 
 //        for (int i = height; i > 0; i--) {
 //            System.out.printf("%s%s\n", "0". repeat(height - i),"*".repeat(i * 2 -1));
