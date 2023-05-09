@@ -3,8 +3,6 @@ package week4.day2;
 public class Parallelogram {
     String spaceChar = "0";
 
-    String shape = "parallelogram";
-
     public Parallelogram(String spaceChar){
         this.spaceChar = spaceChar;
     }
