@@ -17,7 +17,7 @@ public class Diamond {
     //[도전] 그림을 file로 출력
     void outFile(int height){
         try{
-            OutputStream os = new FileOutputStream("C:/Users/shia7/like-lion-java/java-project2/src/main/java/week4/day3/Diamond.txt");
+            OutputStream os = new FileOutputStream("./Diamond.txt");
             String str = makeADiamond(height);
             byte[] byteArr=str.getBytes();
             os.write(byteArr);
