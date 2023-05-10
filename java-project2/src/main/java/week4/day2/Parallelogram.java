@@ -7,18 +7,12 @@ public class Parallelogram {
         this.spaceChar = spaceChar;
     }
     public String makeALine(int height, int i, String shape){
-        int spaceRepeat = 0;
-        int starRepeat = 0;
 
         if(shape.equals("역피라미드")) {
-            spaceRepeat = i;
-            starRepeat = (2 * (height - i) - 1);
+            return String.format("%s%s\n", spaceChar. repeat(i),"*".repeat(2 * (height - i) - 1));
+        } else {
+            return String.format("%s%s\n", spaceChar. repeat(height - i),"*".repeat(height));
         }
-        else if(shape.equals("평행사변형")) {
-            spaceRepeat = height - i;
-            starRepeat = height;
-        }
-        return String.format("%s%s\n", spaceChar. repeat(spaceRepeat),"*".repeat(starRepeat));
     }
     public static void main(String[] args) {
         Parallelogram rPyramid = new Parallelogram(" ");
