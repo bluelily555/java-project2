@@ -4,9 +4,9 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 
 public class Diamond {
+    //[도전] .repeat()안쓰고 마름모 출력
     String getRepeatSimbol(String simbol, int repeat){ //ㅇㅅㅇ
         String result = "";
-
         for (int i = 0; i < repeat; i++) {
             result += simbol;
         }
@@ -14,6 +14,29 @@ public class Diamond {
         return result;
     }
 
+    //[도전] 그림을 file로 출력
+    void outFile(int height){
+        try{
+            OutputStream os = new FileOutputStream("C:/Users/shia7/like-lion-java/java-project2/src/main/java/week4/day3/Diamond.txt");
+            String str = makeADiamond(height);
+            byte[] byteArr=str.getBytes();
+            os.write(byteArr);
+        } catch (Exception e){
+            e.getStackTrace();
+        }
+    }
+
+    String makeADiamond(int height){
+        String result = "";
+
+        for (int i = 0; i < height; i++) {
+            result += makeALine(height, i);
+        }
+
+        return result;
+    }
+
+    //makeALine으로 분리
     String makeALine(int height, int n){
         String result = "";
 
@@ -26,27 +49,11 @@ public class Diamond {
             result += getRepeatSimbol("0", n - pivot);
             result += getRepeatSimbol("*", 2 * (height - n) - 1) + "\n";
         }
+
         return result;
     }
-    String makeADiamond(int height){
-        String result = "";
-        for (int i = 0; i < height; i++) {
-            result += makeALine(height, i);
-        }
-        return result;
-    }
-    void outFile(int height){
-        try{
-            OutputStream os = new FileOutputStream("C:/Users/shia7/like-lion-java/java-project2/src/main/java/week4/day3/Diamond.txt");
-            String str = makeADiamond(height);
-            byte[] byteArr=str.getBytes();
-            os.write(byteArr);
-        } catch (Exception e){
-            e.getStackTrace();
-        }
-    }
 
-
+    //printShape 메소드 만들기
     void printShape(int height){
         for (int i = 0; i < height; i++) {
             System.out.print(makeALine(height, i));
@@ -57,6 +64,7 @@ public class Diamond {
         int height = 7;
         int pivot = height / 2;
 
+        //다이아몬드 출력
         for (int i = 0; i < height; i++) {
             if(i < height / 2){
                 System.out.printf("%s%s\n", " ".repeat(pivot - i), "*".repeat(2 * i + 1));
@@ -66,9 +74,9 @@ public class Diamond {
         }
 
         Diamond diamond = new Diamond();
+        diamond.outFile(height);
         System.out.println(diamond.makeADiamond(height));
         diamond.printShape(height);
-        diamond.outFile(height);
 
 
     }
