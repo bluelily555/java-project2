@@ -1,5 +1,7 @@
 package week4.day3;
 
+import java.io.IOException;
+
 public class DiamondShapeDrawer extends ShapeDrawer2{
     @Override
     public String makeALine(int height, int n) {
@@ -14,8 +16,8 @@ public class DiamondShapeDrawer extends ShapeDrawer2{
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ShapeDrawer2 dpd = new DiamondShapeDrawer();
-        dpd.printShape(9);
+        dpd.printShape(new ConsolePrinter(),9);
     }
 }

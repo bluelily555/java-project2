@@ -1,5 +1,7 @@
 package week4.day3;
 
+import java.io.IOException;
+
 public class RightTriangleShapeDrawer extends ShapeDrawer2{
 
     @Override
@@ -7,8 +9,8 @@ public class RightTriangleShapeDrawer extends ShapeDrawer2{
         return String.format("%s%s\n", "", "*".repeat(n));
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ShapeDrawer2 rightTriangle = new RightTriangleShapeDrawer();
-        rightTriangle.printShape(5);
+        rightTriangle.printShape(new ConsolePrinter(), 5);
     }
 }
