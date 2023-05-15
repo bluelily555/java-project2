@@ -1,11 +1,16 @@
 package week4.day4;
 
 public class Address {
-    private String state;
-    private String city;
-    private String street;
+    private String fullAddr;
+    private String sido; //state
+    private String sigungu; // city, street
 
-    public Address(String address){
+    public Address(){}
 
+    public Address(String fullAddr, String sido, String sigungu) {
+        this.fullAddr = fullAddr;
+        this.sido = sido;
+        this.sigungu = sigungu;
     }
+
 }
