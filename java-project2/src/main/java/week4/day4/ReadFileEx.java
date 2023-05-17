@@ -36,6 +36,5 @@ public class ReadFileEx {
 //        BufferedReader br11Another = new BufferedReader(new InputStreamReader(new FileInputStream("C:\\Users\\shia7\\Desktop\\멋사 백엔드스쿨\\미니프로젝트+데이터\\건강보험심사평가원_전국 병의원 및 약국 현황 2022.9/1.hospital_info_202210.csv"), "EUC-KR"));
 //        System.out.println(br11Another.readLine());
 
-        ReadFileEx
     }
 }
